@@ -7,10 +7,16 @@ import s from './linkButton.module.scss';
 interface LinkButtonProps {
   path: string;
   children: ReactNode;
+  onClick: () => void;
 }
 
-const LinkButton: FC<LinkButtonProps> = ({ path, children }) => {
+const LinkButton: FC<LinkButtonProps> = ({ path, children, onClick }) => {
   const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    onClick();
+    navigate(path);
+  };
 
   return (
     <motion.button
@@ -27,7 +33,7 @@ const LinkButton: FC<LinkButtonProps> = ({ path, children }) => {
       }}
       type="button"
       className={s.link}
-      onClick={() => navigate(path)}
+      onClick={handleButtonClick}
     >
       {children}
     </motion.button>

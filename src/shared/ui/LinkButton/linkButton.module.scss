@@ -9,7 +9,7 @@
   text-decoration: none;
   padding: toRem(21) toRem(102);
 
-  @include adaptiveValue(padding-right, 102, 70, 0, 900.98, 768);
-  @include adaptiveValue(padding-left, 102, 70, 0, 900.98, 768);
+  @include adaptiveValue(padding-right, 102, 70, 0, 991.98, 768);
+  @include adaptiveValue(padding-left, 102, 70, 0, 991.98, 768);
   border-radius: 0.625rem;
 }
