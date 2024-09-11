@@ -12,11 +12,13 @@
   left: 0;
   z-index: 50;
   background: rgba(33, 33, 33, 0.5);
+  overflow-y: auto;
 
   &_wrapper {
     max-width: 36rem;
     width: 36.625rem;
 
     margin: 1rem;
+    overflow-y: auto;
   }
 }

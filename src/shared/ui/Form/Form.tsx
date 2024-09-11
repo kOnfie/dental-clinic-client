@@ -2,6 +2,8 @@ import { FC, FormEvent } from 'react';
 import { useAppDispatch } from 'src/shared/hooks/reduxHook';
 import { openModal } from 'src/app/store/modal/modalSlice';
 
+import { motion } from 'framer-motion';
+
 import { Link } from 'react-router-dom';
 
 import s from './form.module.scss';
@@ -57,9 +59,13 @@ const Form: FC<FormProps> = ({ typeForm }) => {
       )}
 
       <div className={s.tabs}>
-        <button className={s.tabs_submit} type="submit">
+        <motion.button
+          whileHover={{ scale: 1.1, transition: { type: 'spring', stiffness: 400 } }}
+          className={s.tabs_submit}
+          type="submit"
+        >
           {typeForm === 'login' ? 'Log in' : 'Sign up'}
-        </button>
+        </motion.button>
         <Link to="/authentication" className={s.tabs_cancel} type="button">
           Cancel
         </Link>
