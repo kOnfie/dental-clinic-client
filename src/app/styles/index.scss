@@ -1,0 +1,12 @@
+@use 'sass:math';
+
+// Мінімальна ширина сторінки
+$minWidth: 360;
+// Ширина полотна (макету)
+$maxWidth: 1280;
+// Ширина обмежуючого контейнера
+$maxWidthContainer: 1035;
+// Загальний відступ у контейнера
+$containerPadding: 20;
+
+$containerWidth: $maxWidthContainer + $containerPadding;

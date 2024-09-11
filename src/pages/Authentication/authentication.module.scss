@@ -1,0 +1,133 @@
+@import 'src/app/styles/mixins.scss';
+
+.main {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  background-color: var(--bg-color-main);
+}
+
+.info {
+  flex: 0 1 50%;
+
+  display: flex;
+  justify-content: right;
+
+  &_wrapper {
+    position: relative;
+    max-width: 30rem;
+
+    margin: 0 15.625rem toRem(85) toRem(50);
+    @include adaptiveValue(margin-right, 121.6, 70, 0, 900.98, 768);
+  }
+}
+
+.title {
+  @include adaptiveValue(font-size, 78, 54, 0, 1120, 767);
+  line-height: 130%;
+
+  width: min(30rem, 100%);
+
+  margin-bottom: toRem(45);
+}
+
+.image {
+  width: 50%;
+  height: 100%;
+
+  background-image: url('../../../public/images/authorezed.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  border-top-left-radius: 18.75rem;
+}
+
+.icon {
+  &_black-star {
+    position: absolute;
+    top: -2.5rem;
+    left: -3rem;
+
+    width: 3rem;
+    aspect-ratio: 1;
+  }
+
+  &_pasta {
+    position: absolute;
+    @include adaptiveValue(top, -80, -75, 0, 903.98, 768);
+    @include adaptiveValue(right, 16, 20, 0, 903.98, 768);
+
+    width: 5rem;
+    aspect-ratio: 1;
+  }
+
+  &_toothbrush {
+    position: absolute;
+    bottom: -7rem;
+    @include adaptiveValue('left', -144, -60, 0, 1370, 1180);
+
+    width: 7rem;
+    aspect-ratio: 1;
+  }
+
+  &_instrument {
+    position: absolute;
+    top: 10rem;
+    right: -6rem;
+
+    width: 8rem;
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 924.98px) {
+  .info {
+    &_wrapper {
+      margin-left: 1.25rem;
+    }
+
+    margin: 1rem;
+  }
+
+  .icon {
+    &_black-star,
+    &_toothbrush {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .info {
+    position: absolute;
+    text-align: center;
+
+    background: var(--bg-color-main-opacity);
+
+    padding: 1.25rem toRem(30) toRem(55);
+    border-top-left-radius: 5rem;
+
+    &_wrapper {
+      margin: 0;
+    }
+  }
+
+  .image {
+    width: 100%;
+
+    border-top-left-radius: 0rem;
+  }
+
+  .icon {
+    &_pasta,
+    &_instrument {
+      display: none;
+    }
+  }
+}

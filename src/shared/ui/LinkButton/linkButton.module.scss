@@ -1,0 +1,15 @@
+@import 'src/app/styles/mixins.scss';
+
+.link {
+  color: var(--color-text-secondary);
+  font-size: 2.25rem;
+
+  background-color: var(--bg-color-button);
+
+  text-decoration: none;
+  padding: toRem(21) toRem(102);
+
+  @include adaptiveValue(padding-right, 102, 70, 0, 900.98, 768);
+  @include adaptiveValue(padding-left, 102, 70, 0, 900.98, 768);
+  border-radius: 0.625rem;
+}
