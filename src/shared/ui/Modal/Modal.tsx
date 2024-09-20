@@ -6,7 +6,7 @@ import { useAppDispatch } from 'src/shared/hooks/reduxHook';
 
 import s from './modal.module.scss';
 import { closeModal } from 'src/app/store/modal/modalSlice';
-import { useWindowDimensions } from 'src/shared/hooks/useWindowDimensions';
+// import { useWindowDimensions } from 'src/shared/hooks/useWindowDimensions';
 
 interface ModalProps {
   title?: string;
@@ -17,9 +17,7 @@ interface ModalProps {
 const Modal: FC<ModalProps> = ({ title, children, modalId }) => {
   const modal = document.getElementById('modal');
   const dispatch = useAppDispatch();
-  const { width } = useWindowDimensions();
-
-  console.log(width > 767.98);
+  // const { width } = useWindowDimensions();
 
   useEffect(() => {
     const handleKeyEscape = (e: KeyboardEvent) => {
@@ -27,7 +25,6 @@ const Modal: FC<ModalProps> = ({ title, children, modalId }) => {
         dispatch(closeModal(modalId));
       }
     };
-    console.log(modalId);
 
     document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', handleKeyEscape);

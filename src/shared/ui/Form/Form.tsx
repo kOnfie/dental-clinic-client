@@ -1,6 +1,9 @@
-import { FC, FormEvent } from 'react';
-import { useAppDispatch } from 'src/shared/hooks/reduxHook';
+import { FC, FormEvent, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { useAppDispatch, useAppSelector } from 'src/shared/hooks/reduxHook';
 import { openModal } from 'src/app/store/modal/modalSlice';
+import { fetchUserData } from 'src/app/store/auth/authSlice';
 
 import { motion } from 'framer-motion';
 
@@ -14,9 +17,43 @@ interface FormProps {
 
 const Form: FC<FormProps> = ({ typeForm }) => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const authData = useAppSelector((state) => state.auth.data);
+  const errorMessage = useAppSelector((state) => state.auth.errorMessage);
+  console.log(errorMessage);
+
+  const handleSubmitForm = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const fd = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(fd.entries());
+
+    if (typeForm === 'login') {
+      const userData: { [key: string]: FormDataEntryValue } = {
+        email: data.email,
+        password: data.password,
+      };
+
+      dispatch(fetchUserData({ userData, type: 'login' }));
+    } else {
+      const userData: { [key: string]: FormDataEntryValue } = {
+        email: data.email,
+        fullName: data.fullName,
+        password: data.password,
+        phone: data.phone,
+      };
+
+      dispatch(fetchUserData({ userData, type: 'signup' }));
+    }
+  };
+
+  useEffect(() => {
+    if (authData) {
+      navigate('/');
+    }
+  }, [authData, navigate]);
 
   let content;
-
   if (typeForm === 'login') {
     content = (
       <div className={s.inputs}>
@@ -28,20 +65,12 @@ const Form: FC<FormProps> = ({ typeForm }) => {
     content = (
       <div className={s.inputs}>
         <input placeholder="email.example@gmail.com" type="email" name="email" required />
-        <input placeholder="Name Lastname" type="text" name="text" required minLength={6} />
+        <input placeholder="Name Lastname" type="text" name="fullName" required minLength={6} />
         <input placeholder="password..." type="password" name="password" required />
         <input placeholder="+380 (00) 000-00-00" type="phone" name="phone" required />
       </div>
     );
   }
-
-  const handleSubmitForm = (e: FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-
-    const fd = new FormData(e.target as HTMLFormElement);
-    const data = Object.fromEntries(fd.entries());
-    console.table(data);
-  };
 
   const handleClickToLogin = () => {
     dispatch(openModal('loginModal'));
@@ -49,6 +78,7 @@ const Form: FC<FormProps> = ({ typeForm }) => {
 
   return (
     <form onSubmit={handleSubmitForm} className={s.form}>
+      {errorMessage && <p>{errorMessage}</p>}
       <h2>{typeForm === 'login' ? 'Log in' : 'Sign up'}</h2>
       {content}
 
