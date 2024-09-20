@@ -20,7 +20,7 @@
 
   .inputs {
     display: grid;
-    
+
     @include adaptiveValue(row-gap, 22, 15, 0, 434.98, 360);
   }
 
@@ -47,34 +47,5 @@
   a {
     color: var(--color-text-link);
     text-decoration: underline;
-  }
-}
-
-.tabs {
-  margin-top: 2rem;
-
-  &_submit {
-    background-color: var(--bg-color-button);
-    border-radius: toRem(10);
-
-    padding: toRem(10) toRem(41);
-    margin-right: toRem(27);
-
-    color: var(--color-text-secondary);
-    font-size: 1.5rem;
-    line-height: normal;
-  }
-
-  &_cancel {
-    color: var(--color-text-main);
-    font-size: 1.25rem;
-
-    background: transparent;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .tabs {
-    text-align: center;
   }
 }

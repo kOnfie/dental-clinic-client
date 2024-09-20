@@ -1,7 +1,26 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 
+import type { UserDataType } from 'src/shared/ui/Form/Form';
+
+type FulfilledDataType = {
+  login: boolean;
+  success: boolean;
+  token: string;
+  user: {
+    fullName: string;
+    email: string;
+    phone: string;
+    __v: number;
+    _id: string;
+  };
+};
+
+type DataType = {
+  data: FulfilledDataType | { message: string } | null;
+};
+
 interface InitialStateType {
-  data: any;
+  data: DataType;
   errorMessage: string;
   status: 'loading' | 'success' | 'error';
 }
@@ -11,7 +30,7 @@ interface ErrorPayload {
 }
 
 interface FetchUserDataArgs {
-  userData: { [key: string]: FormDataEntryValue };
+  userData: UserDataType;
   type: 'login' | 'signup';
 }
 
@@ -24,7 +43,7 @@ const initialState: InitialStateType = {
 export const fetchUserData = createAsyncThunk(
   'auth/fetchUserData',
   async ({ userData, type }: FetchUserDataArgs) => {
-    const data: any = await fetch(`http://localhost:8000/api/v1/auth/${type}`, {
+    const data = await fetch(`http://localhost:8000/api/v1/auth/${type}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
