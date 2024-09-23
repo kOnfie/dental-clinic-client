@@ -9,4 +9,6 @@ $maxWidthContainer: 1035;
 // Загальний відступ у контейнера
 $containerPadding: 20;
 
-$containerWidth: $maxWidthContainer + $containerPadding;
+$containerWidth: $maxWidthContainer + $containerPadding * 2;
+
+

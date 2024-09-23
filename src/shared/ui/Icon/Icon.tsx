@@ -11,7 +11,7 @@ interface IconProps {
 const Icon = ({ name, className }: IconProps) => {
   return (
     <>
-      {name === 'logo' ? (
+      {name === 'logo' || name === 'logoWhite' ? (
         <svg className={`${s.icon} ${s.logo} ${className}`}>
           <use href={`${sprite}#${name}`} />
         </svg>
