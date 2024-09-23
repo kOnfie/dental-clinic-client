@@ -31,6 +31,7 @@ const Form: FC<{ typeForm: 'login' | 'signup' }> = ({ typeForm }) => {
     e.preventDefault();
 
     const fd = new FormData(e.target as HTMLFormElement);
+    // перетворюємо масив на об'єкт властивостей
     const data = Object.fromEntries(fd.entries());
 
     if (typeForm === 'login') {

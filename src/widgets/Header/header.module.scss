@@ -1,0 +1,9 @@
+@import 'src/app/styles/mixins.scss';
+
+.header {
+  &_button {
+    font-size: 1.25rem;
+    padding: toRem(14) toRem(9);
+    font-weight: 400;
+  }
+}

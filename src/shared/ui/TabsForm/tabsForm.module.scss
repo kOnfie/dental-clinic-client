@@ -4,15 +4,11 @@
   margin-top: 2rem;
 
   &_submit {
-    background-color: var(--bg-color-button);
-    border-radius: toRem(10);
+    font-size: 1.5rem;
+    line-height: normal;
 
     padding: toRem(10) toRem(41);
     margin-right: toRem(27);
-
-    color: var(--color-text-secondary);
-    font-size: 1.5rem;
-    line-height: normal;
   }
 
   &_cancel {

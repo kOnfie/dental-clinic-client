@@ -1,0 +1,8 @@
+@import 'src/app/styles/mixins.scss';
+
+.button {
+  background-color: var(--bg-color-button);
+  border-radius: toRem(10);
+  
+  color: var(--color-text-secondary);
+}
