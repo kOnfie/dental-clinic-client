@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import Header from 'src/widgets/Header/Header';
+
+import { Footer, Header } from 'src/widgets';
+
+import s from './layout.module.scss';
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -14,10 +17,13 @@ const Layout = () => {
   }, []);
 
   return (
-    <>
+    <div className={s.wrapper}>
       <Header />
-      <Outlet />
-    </>
+      <main className={s.main}>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   );
 };
 

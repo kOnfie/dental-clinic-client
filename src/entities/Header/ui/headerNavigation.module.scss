@@ -1,4 +1,6 @@
 .nav {
+  transition: all 0.5s ease;
+
   ul {
     display: flex;
     column-gap: 2.625rem;
@@ -9,8 +11,6 @@
   a {
     color: var(--color-text-main);
   }
-
-  transition: all 0.5s ease;
 
   &_logo {
     display: none;
@@ -35,6 +35,7 @@
     position: fixed;
     top: 0;
     left: -100%;
+    z-index: 100;
 
     width: 80%;
     height: 100vh;
@@ -60,7 +61,7 @@
     &.active {
       left: 0;
     }
-    
+
     &_logo {
       display: block;
     }

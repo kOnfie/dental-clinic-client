@@ -1,3 +1,4 @@
-import HeaderNavigation from './HeaderNavigation/ui/HeaderNavigation';
+import HeaderNavigation from './Header/ui/HeaderNavigation';
+import MapComponent from './Footer/ui/MapComponent';
 
-export { HeaderNavigation };
+export { HeaderNavigation, MapComponent };

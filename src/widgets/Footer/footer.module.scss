@@ -1,0 +1,73 @@
+@import 'src/app/styles/mixins.scss';
+
+.footer {
+  @include adaptiveValue(padding-top, 84, 20);
+  background-color: var(--bg-color-main);
+
+  &_wrapper {
+    max-width: $containerWidth + px;
+    padding: 0 $containerPadding + px;
+    margin: 0 auto;
+
+    padding-bottom: toRem(35);
+  }
+
+  &_map {
+    height: 25rem;
+    margin-bottom: 2.25rem;
+  }
+
+  &_info {
+    display: flex;
+    justify-content: space-between;
+
+    &-title {
+      @include adaptiveValue(font-size, 20, 16);
+
+      margin-bottom: 1.2rem;
+    }
+
+    &-contacts {
+      ul {
+        display: grid;
+        row-gap: 1rem;
+
+        li {
+          display: flex;
+          align-items: center;
+          column-gap: 0.5rem;
+
+          span {
+            @include adaptiveValue(font-size, 20, 12);
+          }
+
+          svg {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &_copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5rem;
+
+    background-color: var(--bg-color-secondary);
+
+    @include adaptiveValue(padding-top, 24, 18);
+    @include adaptiveValue(padding-bottom, 24, 18);
+
+    p {
+      text-transform: uppercase;
+    }
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+}

@@ -6,12 +6,13 @@ import s from './icon.module.scss';
 interface IconProps {
   name: string;
   className?: string;
+  animation?: boolean;
 }
 
-const Icon = ({ name, className }: IconProps) => {
+const Icon = ({ name, className, animation = false }: IconProps) => {
   return (
     <>
-      {name === 'logo' || name === 'logoWhite' ? (
+      {!animation ? (
         <svg className={`${s.icon} ${s.logo} ${className}`}>
           <use href={`${sprite}#${name}`} />
         </svg>

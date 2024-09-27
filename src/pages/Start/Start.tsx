@@ -8,22 +8,10 @@ import Icon from 'src/shared/ui/Icon/Icon';
 import s from './start.module.scss';
 import { useWindowDimensions } from 'src/shared/hooks/useWindowDimensions';
 
-// <<<<<<<<<<<<<<  ✨ Codeium Command 🌟  >>>>>>>>>>>>>>>>
-/**
- * The component of the start page.
- *
- * The component displays the start page with a title, a link to the sign up page,
- * and a background image.
- *
-//  * @return {React.ReactElement} The component of the start page.
- */
 const Start = () => {
   const dispatch = useAppDispatch();
   const { width } = useWindowDimensions();
 
-  /**
-   * Handles the click on the link to the sign up page.
-   */
   const handleClickLink = () => {
     dispatch(openModal('signupModal'));
   };
@@ -32,13 +20,11 @@ const Start = () => {
     <div className={s.start}>
       <div className={s.info}>
         <div className={s.info_wrapper}>
-          {/* The icons of the start page. */}
-          <Icon className={s['icon_black-star']} name="black-star" />
-          <Icon className={s.icon_pasta} name="pasta" />
-          <Icon className={s.icon_toothbrush} name="toothbrush" />
-          <Icon className={s.icon_instrument} name="instrument" />
+          <Icon animation className={s['icon_black-star']} name="black-star" />
+          <Icon animation className={s.icon_pasta} name="pasta" />
+          <Icon animation className={s.icon_toothbrush} name="toothbrush" />
+          <Icon animation className={s.icon_instrument} name="instrument" />
 
-          {/* The title of the start page with animation. */}
           <AnimatePresence>
             <motion.h1
               className={s.title}
@@ -53,14 +39,12 @@ const Start = () => {
             </motion.h1>
           </AnimatePresence>
 
-          {/* The link to the sign up page. */}
           <LinkButton onClick={handleClickLink} path="?mode=signup">
             Sign up
           </LinkButton>
         </div>
       </div>
 
-      {/* The background image of the start page. */}
       {width > 767.98 ? (
         <motion.div
           className={s.image}
@@ -78,6 +62,5 @@ const Start = () => {
     </div>
   );
 };
-// <<<<<<<  71ac61c3-37f6-4e31-9f4c-0cbddb573642  >>>>>>>
 
 export default Start;

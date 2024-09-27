@@ -1,0 +1,24 @@
+@import 'src/app/styles/mixins.scss';
+
+.social {
+  ul {
+    display: grid;
+    row-gap: 1rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      column-gap: toRem(10);
+
+      svg {
+        width: 1.875rem;
+        height: 1.875rem;
+      }
+
+      p {
+        @include adaptiveValue(font-size, 24, 12);
+        color: var(--color-text-main);
+      }
+    }
+  }
+}
