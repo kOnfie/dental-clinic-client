@@ -22,7 +22,7 @@ const Layout = () => {
       <main className={s.main}>
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

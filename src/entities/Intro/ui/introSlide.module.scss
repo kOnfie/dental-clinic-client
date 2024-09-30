@@ -1,0 +1,45 @@
+@import 'src/app/styles/mixins';
+
+.slide {
+  position: relative;
+
+  &_container {
+    text-align: right;
+    max-width: $containerMaxWith + px;
+    padding: 0 $containerPadding + px;
+    margin: 0 auto;
+
+    display: flex;
+    column-gap: 6.4%;
+  }
+
+  &_img {
+    background-image: url('../../../../public/images/intro-slider/doctor&client.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    flex: 0 1 43.984375%;
+  }
+
+  &_info {
+    flex: 0 1 47.875%;
+    text-align: right;
+  }
+
+  &_title {
+    margin-top: toRem(259);
+    margin-bottom: 1rem;
+
+    font-size: 4rem;
+
+    max-width: toRem(514);
+  }
+
+  &_button {
+    margin-bottom: toRem(257);
+    @include adaptiveValue(margin-right, 99, 0, 0, 1309, 767);
+    padding: toRem(21) toRem(83);
+
+    font-size: 2.25rem;
+  }
+}

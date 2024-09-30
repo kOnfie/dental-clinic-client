@@ -3,8 +3,18 @@
     "target": "ES2022",
     "lib": ["ES2023"],
     "module": "ESNext",
+    "jsx": "react-jsx", // або "react-jsx" для новіших версій React
     "skipLibCheck": true,
-    
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    "forceConsistentCasingInFileNames": true,
+
+    // ts не буде видавати помилку, якщо не буде введено тип
+    "noImplicitAny": false,
+
+    // alias
     "baseUrl": ".",
     "paths": {
       "src/*": ["src/*"]

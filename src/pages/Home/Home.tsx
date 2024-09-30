@@ -1,7 +1,9 @@
+import { Intro } from 'src/widgets';
+
 const Home = () => {
   return (
     <>
-      <h1>HOME</h1>
+      <Intro />
     </>
   );
 };

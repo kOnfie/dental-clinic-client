@@ -1,10 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2022",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx", // або "react-jsx" для новіших версій React
+    // "module": "commonjs",
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    "forceConsistentCasingInFileNames": true,
+
+    // ts не буде видавати помилку, якщо не буде введено тип
+    "noImplicitAny": false,
+
+    // alias
     "baseUrl": ".",
     "paths": {
       "src/*": ["src/*"]
@@ -16,7 +28,6 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "jsx": "react-jsx",
 
     /* Linting */
     "strict": true,
