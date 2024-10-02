@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-import sprite from 'src/../public/sprite.svg';
-import s from './icon.module.scss';
+import sprite from "src/../public/sprite.svg";
+import s from "./icon.module.scss";
 
 interface IconProps {
   name: string;
@@ -13,13 +13,14 @@ const Icon = ({ name, className, animation = false }: IconProps) => {
   return (
     <>
       {!animation ? (
-        <svg className={`${s.icon} ${s.logo} ${className}`}>
+        <svg className={`${s.icon} ${s.logo} ${className}`} data-testid="icon">
           <use href={`${sprite}#${name}`} />
         </svg>
       ) : (
         <motion.svg
-          initial={'hidden'}
-          animate={'visible'}
+          data-testid="icon"
+          initial={"hidden"}
+          animate={"visible"}
           variants={{
             hidden: { opacity: 0, scale: 0.8 },
             visible: {

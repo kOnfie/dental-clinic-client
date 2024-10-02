@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Button } from "src/shared/ui";
+import { Link } from "react-router-dom";
 
 import s from "./introSlide.module.scss";
-import { Link } from "react-router-dom";
 
 interface IntroSlideProps {
   title: string;
@@ -15,13 +15,14 @@ const IntroSlide: FC<IntroSlideProps> = ({ title, btnText, typeSlide }) => {
     <div className={s.slide}>
       <div className={s.slide_container}>
         <div className={s.slide_body}>
-          <div
+          <div data-testid="slide_img"
             className={`${s.slide_img} ${
               typeSlide === "services" ? s.services : s.reviews
             } ${typeSlide === "about-us" ? s.about : ""}`}
           ></div>
 
           <div
+          data-testid="slide_info"
             className={`${s.slide_info} ${
               typeSlide === "services" ? s.services : s.reviews
             }`}

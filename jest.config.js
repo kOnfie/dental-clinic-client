@@ -12,6 +12,7 @@ const config = {
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
     '!src/**/*.d.ts',
+    '!src/**/index.ts',
     '!src/**/*.{spec,test}.{js,jsx,ts,tsx}',
     '!**/node_modules/**',
     '!**/vendor/**',
