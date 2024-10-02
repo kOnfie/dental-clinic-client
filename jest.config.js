@@ -1,10 +1,12 @@
 /** @type {import('jest').Config} */
 const config = {
+  verbose: true,
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '^src/(.*)$': '<rootDir>/src/$1',
   },
   collectCoverage: true,
   collectCoverageFrom: [

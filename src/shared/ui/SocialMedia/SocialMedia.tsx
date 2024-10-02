@@ -11,7 +11,7 @@ const SocialMedia = () => {
           <p>@dental.clinic</p>
         </a>
         <a href="#">
-          <Icon name="instagram" />
+          <Icon name="facebook" />
           <p>@dental.clinic</p>
         </a>
       </ul>

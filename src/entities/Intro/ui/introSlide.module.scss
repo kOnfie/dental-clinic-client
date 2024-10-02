@@ -1,45 +1,107 @@
-@import 'src/app/styles/mixins';
+@import "src/app/styles/mixins";
 
 .slide {
   position: relative;
 
   &_container {
-    text-align: right;
     max-width: $containerMaxWith + px;
     padding: 0 $containerPadding + px;
     margin: 0 auto;
+  }
 
+  &_body {
     display: flex;
-    column-gap: 6.4%;
+
+    text-align: right;
+    background-color: var(--bg-color-banner);
   }
 
   &_img {
-    background-image: url('../../../../public/images/intro-slider/doctor&client.jpg');
+    &.services {
+      background-image: url("../../../../public/images/intro-slider/doctor&client.webp");
+    }
+    &.reviews {
+      order: 2;
+      background-image: url("../../../../public/images/intro-slider/doctor&client2.webp");
+    }
+    &.about {
+      background-image: url("../../../../public/images/intro-slider/doctor&child.webp");
+    }
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center right;
 
-    flex: 0 1 43.984375%;
+    width: 44%;
   }
 
   &_info {
-    flex: 0 1 47.875%;
+    width: 56%;
+
+    padding-left: 6.4%;
+    padding-right: 20px;
+
     text-align: right;
+
+    &.reviews {
+      order: 1;
+
+      @include adaptiveValue(padding-left, 122, 0, 0, 1280, 1064);
+      text-align: left;
+    }
   }
 
   &_title {
     margin-top: toRem(259);
     margin-bottom: 1rem;
 
-    font-size: 4rem;
+    @include adaptiveValue(font-size, 64, 32, 0, 1024);
 
     max-width: toRem(514);
   }
 
   &_button {
     margin-bottom: toRem(257);
-    @include adaptiveValue(margin-right, 99, 0, 0, 1309, 767);
+    @include adaptiveValue(margin-right, 101, 0, 0, 1319, 1115);
     padding: toRem(21) toRem(83);
 
-    font-size: 2.25rem;
+    @include adaptiveValue(font-size, 36, 24, 0, 1024);
+  }
+
+  @media (max-width: 767.98px) {
+    &_img {
+      width: 100%;
+      height: 100vh;
+
+      background-position: center center;
+    }
+
+    &_info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      z-index: 5;
+
+      @include adaptiveValue(width, 500, 300, 0, 767.98);
+
+      background-color: var(--bg-color-banner);
+      border-radius: 20px;
+
+      &.services,
+      &.reviews {
+        text-align: center;
+        padding: 1.5rem 1rem;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      button {
+        margin-bottom: 0;
+        max-width: 100%;
+      }
+    }
   }
 }

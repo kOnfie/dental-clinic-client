@@ -8,7 +8,7 @@ import s from './headerNavigation.module.scss';
 
 const HeaderNavigation: FC<{ isActiveMenu: boolean }> = ({ isActiveMenu }) => {
   return (
-    <nav className={`${s.nav} ${isActiveMenu ? s.active : ''}`}>
+    <nav className={`${s.nav} ${isActiveMenu ? s.active : ''}`} data-testid="navigation">
       <Icon name="logoWhite" className={s.nav_logo} />
 
       <ul>
