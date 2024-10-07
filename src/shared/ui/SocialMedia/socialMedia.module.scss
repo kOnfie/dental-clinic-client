@@ -16,8 +16,8 @@
       }
 
       p {
-        @include adaptiveValue(font-size, 24, 12);
         color: var(--color-text-main);
+        @include adaptiveValue(font-size, 24, 12);
       }
     }
   }

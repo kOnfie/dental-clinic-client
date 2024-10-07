@@ -24,10 +24,10 @@
   &_button {
     padding: toRem(14) toRem(9);
 
-    @include adaptiveValue(font-size, 20, 16, 0, 400.98);
-    font-weight: 400;
-
     height: 3.6rem;
+
+    font-weight: 400;
+    @include adaptiveValue(font-size, 20, 16, 0, 400.98);
   }
 
   &_actions {

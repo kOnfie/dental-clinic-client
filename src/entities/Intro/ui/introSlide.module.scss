@@ -17,6 +17,12 @@
   }
 
   &_img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+
+    width: 44%;
+
     &.services {
       background-image: url("../../../../public/images/intro-slider/doctor&client.webp");
     }
@@ -27,11 +33,6 @@
     &.about {
       background-image: url("../../../../public/images/intro-slider/doctor&child.webp");
     }
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center right;
-
-    width: 44%;
   }
 
   &_info {
@@ -45,8 +46,8 @@
     &.reviews {
       order: 1;
 
-      @include adaptiveValue(padding-left, 122, 0, 0, 1280, 1064);
       text-align: left;
+      @include adaptiveValue(padding-left, 122, 0, 0, 1280, 1064);
     }
   }
 
@@ -54,15 +55,14 @@
     margin-top: toRem(259);
     margin-bottom: 1rem;
 
-    @include adaptiveValue(font-size, 64, 32, 0, 1024);
-
     max-width: toRem(514);
+    @include adaptiveValue(font-size, 64, 32, 0, 1024);
   }
 
   &_button {
+    padding: toRem(21) toRem(83);
     margin-bottom: toRem(257);
     @include adaptiveValue(margin-right, 101, 0, 0, 1319, 1115);
-    padding: toRem(21) toRem(83);
 
     @include adaptiveValue(font-size, 36, 24, 0, 1024);
   }
@@ -83,10 +83,10 @@
 
       z-index: 5;
 
-      @include adaptiveValue(width, 500, 300, 0, 767.98);
-
       background-color: var(--bg-color-banner);
       border-radius: 20px;
+
+      @include adaptiveValue(width, 500, 300, 0, 767.98);
 
       &.services,
       &.reviews {

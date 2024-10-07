@@ -1,15 +1,15 @@
-@import 'src/app/styles/mixins.scss';
+@import "src/app/styles/mixins.scss";
 
 .form {
   border-radius: toRem(30);
   background: #e5e5e5;
 
+  width: min(toRem(586), 100%);
+
   @include adaptiveValue(padding-top, 39, 15, 0, 434.98, 360);
   @include adaptiveValue(padding-bottom, 39, 15, 0, 434.98, 360);
   @include adaptiveValue(padding-right, 43, 20, 0, 434.98, 360);
   @include adaptiveValue(padding-left, 43, 20, 0, 434.98, 360);
-
-  width: min(toRem(586), 100%);
 
   h2 {
     font-size: 32px;
