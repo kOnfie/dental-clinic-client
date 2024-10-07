@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
 
 :root {
   // colors
   --color-text-main: #000;
   --color-text-secondary: #fff;
+  --color-text-third: #dad4d4;
   --color-text-link: #6b5f5f;
   --color-hover-effect: #3a3838;
 
@@ -15,7 +16,8 @@
   --bg-color-header: hsla(0, 0%, 100%, 0.5);
   --bg-color-menu: #000000dc;
   --bg-color-banner: #e5e5e5;
+  --bg-color-item: #000;
 
   // fonts
-  --font-hammer: 'Hammersmith One', sans-serif;
+  --font-hammer: "Hammersmith One", sans-serif;
 }

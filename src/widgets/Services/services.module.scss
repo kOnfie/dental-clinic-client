@@ -1,0 +1,49 @@
+@import "src/app/styles/index.scss";
+@import "src/app/styles/mixins.scss";
+
+.services {
+  background-color: var(--bg-color-main);
+
+  @include adaptiveValue(padding-top, 81, 30);
+  &_container {
+    max-width: $containerWidth + px;
+    padding: 0 $containerPadding + px;
+    margin: 0 auto;
+  }
+
+  &_body {
+    color: var(--color-text-secondary);
+
+    &-title {
+      font-size: 3rem;
+    }
+
+    &-text {
+      font-size: 1.25rem;
+      color: var(--color-text-third);
+    }
+  }
+
+  &_items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include adaptiveValue("column-gap", 55, 10);
+    @include adaptiveValue("row-gap", 43, 15);
+
+    @include adaptiveValue("padding-top", 49, 20);
+    @include adaptiveValue("padding-bottom", 74, 15);
+  }
+
+  @media (max-width: 1023.98px) {
+    &_items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    &_items {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
