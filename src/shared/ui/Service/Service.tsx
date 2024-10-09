@@ -12,8 +12,10 @@ interface ServiceProps {
 const Service: FC<ServiceProps> = ({ service, description, path }) => {
   return (
     <div className={s.service}>
-      <h4 className={s.service_title}>{service}</h4>
-      <p>{description}</p>
+      <div>
+        <h4 className={s.service_title}>{service}</h4>
+        <p>{description}</p>
+      </div>
 
       <Link to={path} className={s.service_link}>
         + more details
