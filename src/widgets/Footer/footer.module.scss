@@ -1,8 +1,8 @@
-@import 'src/app/styles/mixins.scss';
+@import "src/app/styles/mixins.scss";
 
 .footer {
-  @include adaptiveValue(padding-top, 84, 20);
   background-color: var(--bg-color-main);
+  @include adaptiveValue(padding-top, 84, 20);
 
   &_wrapper {
     max-width: $containerWidth + px;
@@ -22,9 +22,9 @@
     justify-content: space-between;
 
     &-title {
-      @include adaptiveValue(font-size, 20, 16);
-
       margin-bottom: 1.2rem;
+
+      @include adaptiveValue(font-size, 20, 16);
     }
 
     &-contacts {

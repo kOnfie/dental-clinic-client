@@ -1,10 +1,11 @@
-import Icon from '../Icon/Icon';
+import { FC } from "react";
+import Icon from "../Icon/Icon";
 
-import s from './socialMedia.module.scss';
+import s from "./socialMedia.module.scss";
 
-const SocialMedia = () => {
+const SocialMedia: FC<{ className?: string }> = ({ className }) => {
   return (
-    <div className={s.social}>
+    <div className={`${s.social} ${className}`}>
       <ul>
         <a href="#">
           <Icon name="instagram" />

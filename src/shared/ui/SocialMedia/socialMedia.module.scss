@@ -1,4 +1,4 @@
-@import 'src/app/styles/mixins.scss';
+@import "src/app/styles/mixins.scss";
 
 .social {
   ul {
@@ -16,8 +16,11 @@
       }
 
       p {
-        @include adaptiveValue(font-size, 24, 12);
         color: var(--color-text-main);
+
+        font-family: var(--font-hanuman);
+        font-weight: 400;
+        @include adaptiveValue(font-size, 24, 12);
       }
     }
   }

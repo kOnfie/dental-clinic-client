@@ -1,4 +1,4 @@
-@import 'src/app/styles/mixins.scss';
+@import "src/app/styles/mixins.scss";
 
 .start {
   height: 100vh;
@@ -28,19 +28,19 @@
 }
 
 .title {
-  @include adaptiveValue(font-size, 78, 54, 0, 1120, 767);
-  line-height: 130%;
-
   width: min(30rem, 100%);
 
   margin-bottom: toRem(45);
+
+  line-height: 130%;
+  @include adaptiveValue(font-size, 78, 54, 0, 1120, 767);
 }
 
 .image {
   width: 50%;
   height: 100%;
 
-  background-image: url('../../../public/images/authorezed.jpg');
+  background-image: url("../../../public/images/authorezed.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -59,21 +59,22 @@
   }
 
   &_pasta {
+    width: 5rem;
+    height: 5rem;
+
     position: absolute;
     @include adaptiveValue(top, -80, -75, 0, 903.98, 768);
     @include adaptiveValue(right, 16, 20, 0, 903.98, 768);
-
-    width: 5rem;
-    aspect-ratio: 1;
   }
 
   &_toothbrush {
     position: absolute;
     bottom: -7rem;
-    @include adaptiveValue('left', -144, -60, 0, 1370, 1180);
 
     width: 7rem;
     aspect-ratio: 1;
+
+    @include adaptiveValue("left", -144, -60, 0, 1370, 1180);
   }
 
   &_instrument {
@@ -88,11 +89,10 @@
 
 @media (max-width: 924.98px) {
   .info {
+    margin: 1rem;
     &_wrapper {
       margin-left: 1.25rem;
     }
-
-    margin: 1rem;
   }
 
   .icon {
