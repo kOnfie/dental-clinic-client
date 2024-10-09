@@ -1,0 +1,118 @@
+@import "src/app/styles/index.scss";
+@import "src/app/styles/mixins.scss";
+
+.schedule {
+  &_container {
+    display: flex;
+
+    max-width: $containerMaxWidth + px;
+
+    margin: 0 auto;
+  }
+
+  &_img {
+    background-image: url("../../../public/images/schedule.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 57%;
+
+    position: relative;
+
+    p {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+
+      display: block;
+      background-color: var(--bg-color-secondary);
+
+      border-radius: 0 2.5rem 0 0;
+      padding: 23px 34px 20px 0px;
+
+      color: var(--color-text-secondary);
+
+      @include adaptiveValue(padding-left, 128, 10, 0, 1280, 768);
+      @include adaptiveValue(font-size, 20, 12);
+    }
+  }
+
+  &_body {
+    width: 43%;
+
+    background: var(--bg-color-third);
+
+    text-align: center;
+
+    @include adaptiveValue(padding-top, 94, 20);
+
+    h2 {
+      font-size: 4rem;
+
+      @include adaptiveValue(margin-bottom, 55, 15);
+    }
+
+    &-list {
+      display: grid;
+      row-gap: toRem(21);
+      justify-items: center;
+
+      @include adaptiveValue(margin-bottom, 40, 15);
+
+      li {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include adaptiveValue(column-gap, 62, 20);
+      }
+
+      &-days {
+        font-size: 2rem;
+      }
+
+      &-times {
+        font-size: 1.5rem;
+      }
+    }
+
+    &-btn {
+      font-size: 2.25rem;
+
+      padding: toRem(21) toRem(45);
+
+      @include adaptiveValue(margin-bottom, 59, 15);
+    }
+
+    &-media {
+      ul {
+        justify-items: center;
+
+        @include adaptiveValue(margin-bottom, 78, 20);
+      }
+    }
+  }
+
+  @media (max-width: 990.98px) {
+    &_img {
+      width: 40%;
+    }
+
+    &_body {
+      width: 60%;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    &_img {
+      display: none;
+    }
+
+    &_body {
+      width: 100%;
+    }
+  }
+}

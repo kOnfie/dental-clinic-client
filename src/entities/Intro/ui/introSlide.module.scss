@@ -4,8 +4,8 @@
   position: relative;
 
   &_container {
-    max-width: $containerMaxWith + px;
-    padding: 0 $containerPadding + px;
+    max-width: $containerMaxWidth + px;
+    
     margin: 0 auto;
   }
 

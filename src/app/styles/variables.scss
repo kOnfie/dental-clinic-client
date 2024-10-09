@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap");
 
 :root {
   // colors
@@ -12,6 +13,7 @@
   --bg-color-main: #968d70;
   --bg-color-main-opacity: #968d70cd;
   --bg-color-secondary: #7a7f69;
+  --bg-color-third: #b9ad9d;
   --bg-color-button: #000;
   --bg-color-header: hsla(0, 0%, 100%, 0.5);
   --bg-color-menu: #000000dc;
@@ -20,4 +22,5 @@
 
   // fonts
   --font-hammer: "Hammersmith One", sans-serif;
+  --font-hanuman: "Hanuman", serif;
 }

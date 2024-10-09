@@ -1,10 +1,11 @@
-import { Intro, Services } from "src/widgets";
+import { Intro, Schedule, Services } from "src/widgets";
 
 const Home = () => {
   return (
     <>
       <Intro />
       <Services />
+      <Schedule />
     </>
   );
 };
